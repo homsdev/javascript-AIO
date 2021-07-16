@@ -35,6 +35,12 @@ const power = (base, exponent) => {
   return result;
 };
 
+//Inmediately Invoked function Expression
+(function name(params) {
+  let num =3;
+  console.log(num);
+})();
+
 console.log(`Arrow function test : ${power(2, 8)}`);
 
 //The call stack
