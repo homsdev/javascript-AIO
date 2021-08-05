@@ -5,8 +5,8 @@ class httpFetchRequest {
   }
 
   async API(request) {
-    const data = await fetch(request);
-    return await data.json();
+    const res = await fetch(request);
+    return await res.json();
   }
 
   async get() {
@@ -14,8 +14,8 @@ class httpFetchRequest {
       method: this.type,
     };
     const req = new Request(this.url, reqInit);
-    const data = await this.API(req);
-    return data.results;
+    const res = await this.API(req);
+    return res.results;
   }
 
   async post(obj) {
@@ -28,8 +28,8 @@ class httpFetchRequest {
     };
 
     const req = new Request(this.url, reqInit);
-    const data = await this.API(req);
-    return data;
+    const res = await this.API(req);
+    return res;
   }
 }
 
@@ -42,7 +42,7 @@ btnGet.addEventListener("click", () => {
     "https://rickandmortyapi.com/api/character"
   );
 
-  req.get().then((data) => console.log(data));
+  req.get().then((res) => console.log(res));
 });
 
 btnPost.addEventListener("click", () => {
@@ -57,5 +57,5 @@ btnPost.addEventListener("click", () => {
     userId: 1,
   };
 
-  req.post(obj).then((data) => console.log(data));
+  req.post(obj).then((res) => console.log(res));
 });
